@@ -1,5 +1,7 @@
 import { Inter } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
+import "./style.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,7 +13,21 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <head>
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-L72VCDQRZK" />
+      </head>
+      <body
+        className="home page-template page-template-page-templates page-template-home page-template-page-templateshome-php page page-id-6"
+        style={{ scrollBehavior: "smooth" }}
+        data-rsssl="1"
+        data-barba="wrapper"
+        aria-live="polite"
+        id="top"
+      >
+        {children}
+        <Script src="https://hotelodisej.com/wp-content/themes/alh-hotel-odisej-web-2023/static/dist/vendor.js?ver=1.63.1686748168" />
+        <Script src="https://hotelodisej.com/wp-content/themes/alh-hotel-odisej-web-2023/static/dist/bundle.js?ver=1.63.1686748168" />
+      </body>
     </html>
   );
 }
